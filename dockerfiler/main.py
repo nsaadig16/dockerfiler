@@ -1,15 +1,12 @@
 import re
-from dotenv import load_dotenv
 from .cli import select_project, ask_params
+from argparse import ArgumentParser
 from jinja2 import Environment, FileSystemLoader
 from pathlib import Path
-from .config import TEMPLATES_PATH, OUTPUT_PATH
 
-env = Environment(loader=FileSystemLoader(Path(__file__).parent / TEMPLATES_PATH))
-load_dotenv()
+env = Environment(loader=FileSystemLoader(Path(__file__).parent / "templates"))
 
-
-def main():
+def main(args):
     try:
         project_id, project_class = select_project()
         params = ask_params(project_class)
@@ -18,12 +15,11 @@ def main():
         exit()
 
     dockerfile = generate_dockerfile(project_type=project_id, params=params)
-    output_file = Path().cwd() / OUTPUT_PATH
+    output_file = Path.cwd() / args.output / "Dockerfile"
     output_file.write_text(dockerfile.strip())
 
-    print("=====DONE!=====")
-    print("Your dockerfile has been created at " + OUTPUT_PATH)
-
+    print("\033[32m=====DONE!=====\033[0m")
+    print("\033[32mYour Dockerfile has been created at " + f"\033[35m{output_file}\033[0m")
 
 def generate_dockerfile(project_type: str, params: dict) -> str:
     template = env.get_template(f"{project_type}.j2")
@@ -32,4 +28,11 @@ def generate_dockerfile(project_type: str, params: dict) -> str:
 
 
 if __name__ == "__main__":
-    main()
+    parser = ArgumentParser(
+        description="Generate Dockerfiles interactively from templates"
+    )
+    parser.add_argument(
+        "--output", "-o", type=str, default=".", help="Output path for the Dockerfile"
+    )
+    args = parser.parse_args()
+    main(args)
