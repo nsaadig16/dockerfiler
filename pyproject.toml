@@ -1,17 +1,41 @@
 [project]
 name = "dockerfiler"
-version = "0.1"
+version = "0.2.2"
 description = "Generate Dockerfiles interactively from templates"
+license = { file = "LICENSE" }
 readme = "README.md"
 requires-python = ">=3.12"
+
+authors = [
+    { name = "Naïm Saadi", email = "nsaadig16@gmail.com" }
+]
+
 dependencies = [
     "inquirerpy>=0.3.4",
     "jinja2>=3.1.6",
     "questionary>=2.1.1",
 ]
 
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+    "Topic :: Software Development :: Code Generators",
+]
+
 [project.scripts]
 dockerfiler = "dockerfiler.main:main"
+
+[project.urls]
+Repository = "https://github.com/nsaadig16/dockerfiler"
 
 [build-system]
 requires = ["setuptools>=61"]

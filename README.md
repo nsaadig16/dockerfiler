@@ -1,9 +1,11 @@
+![PyPI - Version](https://img.shields.io/pypi/v/dockerfiler)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dockerfiler)
+
 <div align="center">
 <img src="https://raw.githubusercontent.com/nsaadig16/dockerfiler/refs/heads/main/assets/icon.png" width=100 >
 </div>
 
 # DockerFiler
-
 
 **Dockerfiler** is a tool that builds a Dockerfile given some interactive prompts.
 

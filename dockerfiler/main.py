@@ -6,7 +6,14 @@ from pathlib import Path
 
 env = Environment(loader=FileSystemLoader(Path(__file__).parent / "templates"))
 
-def main(args):
+def main():
+    parser = ArgumentParser(
+        description="Generate Dockerfiles interactively from templates"
+    )
+    parser.add_argument(
+        "--output", "-o", type=str, default=".", help="Output path for the Dockerfile"
+    )
+    args = parser.parse_args()
     try:
         project_id, project_class = select_project()
         params = ask_params(project_class)
@@ -28,11 +35,4 @@ def generate_dockerfile(project_type: str, params: dict) -> str:
 
 
 if __name__ == "__main__":
-    parser = ArgumentParser(
-        description="Generate Dockerfiles interactively from templates"
-    )
-    parser.add_argument(
-        "--output", "-o", type=str, default=".", help="Output path for the Dockerfile"
-    )
-    args = parser.parse_args()
-    main(args)
+    main()
