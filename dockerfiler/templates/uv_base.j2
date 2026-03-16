@@ -1,0 +1,15 @@
+{% extends "base.j2" %}
+
+{% block image %}
+FROM astral/uv:python{{ version }}-alpine
+{% endblock %}
+
+{% block install %}
+COPY uv.lock pyproject.toml ./
+RUN uv sync --no-install-project
+{% endblock %}
+
+{% block command %}
+CMD ["uv", "run", {{ entrypoint }}]
+{% endblock %}
+

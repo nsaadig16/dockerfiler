@@ -1,0 +1,5 @@
+{% extends "uv_base.j2" %}
+
+{% block command %}
+CMD ["uv", "run", "manage.py", "runserver", "{{ host }}:{{ port }}"]
+{% endblock %}
