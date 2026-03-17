@@ -34,3 +34,7 @@ class FastapiUVParams(UVBaseParams):
         type="text",
     )
     entrypoint: None = field(default=None)
+
+@dataclass
+class DjangoTailwindUVParams(DjangoUVParams):
+    tailwind_version: int = ask(question="Tailwind version?", default="3.4.17", type="text")

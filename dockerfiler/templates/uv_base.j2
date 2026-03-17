@@ -1,12 +1,12 @@
 {% extends "base.j2" %}
 
 {% block image %}
-FROM astral/uv:python{{ version }}-alpine
+FROM astral/uv:python{{ version }}-bookworm-slim
 {% endblock %}
 
 {% block install %}
 COPY uv.lock pyproject.toml ./
-RUN uv sync --no-install-project
+RUN uv sync --no-install-project --frozen
 {% endblock %}
 
 {% block command %}

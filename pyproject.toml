@@ -1,6 +1,6 @@
 [project]
 name = "dockerfiler"
-version = "0.2.2"
+version = "0.3"
 description = "Generate Dockerfiles interactively from templates"
 license = { file = "LICENSE" }
 readme = "README.md"
