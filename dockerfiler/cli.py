@@ -1,7 +1,7 @@
 import json
 from dataclasses import fields
 from InquirerPy import inquirer
-from .data import PROJECTS
+from .projects import PROJECTS
 
 
 def select_project():
