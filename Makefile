@@ -1,9 +1,9 @@
 .PHONY: build test clean deploy
 
 build: clean
-uv build
+	uv build
 deploy: build
-uv publish && uv cache clean
+	uv publish && uv cache clean
 test:
 	uv sync && uv run dockerfiler --output "example.Dockerfile"
 clean:
