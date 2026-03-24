@@ -1,6 +1,6 @@
 [project]
 name = "dockerfiler"
-version = "0.3"
+version = "0.4"
 description = "Generate Dockerfiles interactively from templates"
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -15,6 +15,7 @@ dependencies = [
     "inquirerpy>=0.3.4",
     "jinja2>=3.1.6",
     "questionary>=2.1.1",
+    "rich>=14.3.3",
 ]
 
 classifiers = [
