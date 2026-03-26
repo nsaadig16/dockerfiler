@@ -1,11 +1,20 @@
-.PHONY: build test clean deploy
+.PHONY: clean build test run check-version deploy
 
+clean:
+	find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
+	rm -rf dist/ build/ *.egg-info
 build: clean
 	uv build
-deploy: build
+test: build
+	uv pip install dist/*.tar.gz --force-reinstall
+	@echo "Testing installation..."
+	dockerfiler --help
+run: test
+	dockerfiler --output "example.Dockerfile"
+check-version:
+	@echo "Current version in pyproject.toml:"
+	@grep "^version" pyproject.toml
+deploy: check-version build
+	@echo "Preparing to deploy..."
+	@sleep 3
 	uv publish && uv cache clean
-test:
-	uv sync && uv run dockerfiler --output "example.Dockerfile"
-clean:
-	find . -type d -name "__pycache__" -exec rm -r {} +
-	rm -rf dist/ *.egg-info

@@ -1,6 +1,6 @@
 [project]
 name = "dockerfiler"
-version = "0.4"
+version = "0.4.1"
 description = "Generate Dockerfiles interactively from templates"
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -48,4 +48,4 @@ where = ["."]
 include = ["dockerfiler*"]
 
 [tool.setuptools.package-data]
-dockerfiler = ["templates/*.j2"]
+dockerfiler = ["projects/**/*.j2"]
