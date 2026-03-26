@@ -10,7 +10,7 @@ test: build
 	@echo "Testing installation..."
 	dockerfiler --help
 run: test
-	dockerfiler --output "example.Dockerfile"
+	dockerfiler --output-dockerfile "example.Dockerfile" --output-dockerignore "example.dockerignore"
 check-version:
 	@echo "Current version in pyproject.toml:"
 	@grep "^version" pyproject.toml
