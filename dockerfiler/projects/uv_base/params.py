@@ -1,9 +1,10 @@
+import dockerfiler.projects.base._params as p
 from dataclasses import dataclass
 from dockerfiler.projects.utils import ask, PYTHON_VERSIONS
 from typing import Optional
 
 @dataclass
-class UVBaseParams:
+class Params(p.Params):
     version: str = ask(
         question="Python version?",
         default="3.12",
@@ -14,3 +15,7 @@ class UVBaseParams:
     entrypoint: Optional[str] = ask(
         question="Entrypoint?", default="main.py", type="text", list_parse=True
     )
+
+@dataclass
+class IgnoreParams(p.IgnoreParams):
+    pass

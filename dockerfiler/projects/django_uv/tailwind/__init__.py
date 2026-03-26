@@ -1,7 +1,8 @@
-from .params import DjangoTailwindUVParams
+import dockerfiler.projects.django_uv.tailwind.params as p
 
 PROJECT = {
-    "params": DjangoTailwindUVParams,
-    "template": "django_uv/tailwind/django_uv_tailwind.j2",
+    "params": p.Params,
+    "ignore_params" : p.IgnoreParams,
     "display_name": "Django + Tailwind (uv)",
+    "folder" : "django_uv/tailwind"
 }

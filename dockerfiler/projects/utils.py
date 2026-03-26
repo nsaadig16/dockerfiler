@@ -11,13 +11,15 @@ def ask(
     choices: Optional[List] = None,
     list_parse: bool = False,
 ):
+    metadata={
+        "question": question,
+        "default": default,
+        "type": type,
+        "list_parse": list_parse,
+    }
+    if choices is not None:
+        metadata["choices"] = choices
     return field(
         default=None,
-        metadata={
-            "question": question,
-            "default": default,
-            "type": type,
-            "choices": choices,
-            "list_parse": list_parse,
-        },
+        metadata=metadata,
     )

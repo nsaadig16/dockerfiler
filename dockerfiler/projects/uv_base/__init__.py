@@ -1,7 +1,8 @@
-from .params import UVBaseParams
+import dockerfiler.projects.uv_base.params as p
 
 PROJECT = {
-    "params" : UVBaseParams,
-    "template" : "uv_base/uv_base.j2",
-    "display_name" : "uv (base)"
+    "params" : p.Params,
+    "ignore_params" : p.IgnoreParams,
+    "display_name" : "uv (base)",
+    "folder" : "uv_base",
 }
