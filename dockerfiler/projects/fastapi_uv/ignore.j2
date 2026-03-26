@@ -1,0 +1,26 @@
+{% extends 'uv_base/ignore.j2'%}
+
+{% block ignore_uv %}
+
+{% if ignore_dev_database %}
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+{% endif %}
+
+# Alembic
+alembic.ini
+alembic/versions/*.pyc
+
+# Static files
+static/
+media/
+
+# Logs
+*.log
+logs/
+
+# OpenAPI/Swagger customization
+openapi.json
+{% endblock%}

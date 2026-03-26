@@ -1,0 +1,21 @@
+{% block image %}
+FROM {{ base_image }}
+{% endblock%}
+
+{% block system_dependencies %}{% endblock %}
+
+WORKDIR /app
+
+{% block install %}{% endblock %}
+
+{% block copy %}
+COPY . .
+{% endblock %}
+
+{% block build %}{% endblock %}
+
+{% if port %}
+EXPOSE {{ port }}
+{% endif %}
+
+{% block command %}{% endblock %}

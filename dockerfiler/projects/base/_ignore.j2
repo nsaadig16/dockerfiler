@@ -1,0 +1,38 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.*
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+{% if ignore_docs %}
+# Documentation
+docs/
+*.md
+README.md
+{% endif %}
+{% block ignore%}{% endblock %}

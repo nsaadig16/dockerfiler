@@ -1,0 +1,15 @@
+{% extends "django_uv/dockerfiler.j2" %}
+
+{% block system_dependencies %}
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl -sLo /usr/local/bin/tailwindcss \
+    "https://github.com/tailwindlabs/tailwindcss/releases/download/v{{ tailwind_version }}/tailwindcss-linux-x64" \
+    && chmod +x /usr/local/bin/tailwindcss
+{% endblock %}
+
+{% block build %}
+RUN tailwindcss -i ./static/css/input.css -o ./static/css/output.css --minify
+{% endblock %}

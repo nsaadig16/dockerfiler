@@ -1,0 +1,18 @@
+{% extends 'django_uv/ignore.j2' %}
+{% block ignore_tailwind %}
+# Local Tailwind binary
+tailwindcss
+tailwindcss-*
+
+# Tailwind build
+static/css/output.css
+staticfiles/css/output.css
+
+# Node stuff
+node_modules/
+package.json
+package-lock.json
+
+# PostCSS config
+postcss.config.js
+{% endblock %}

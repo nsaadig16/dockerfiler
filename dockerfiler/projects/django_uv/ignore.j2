@@ -1,0 +1,41 @@
+{% extends 'uv_base/ignore.j2' %}
+
+{% block ignore_uv %}
+{% if ignore_dev_database %}
+# Database
+*.db
+*.sqlite3
+db.sqlite3
+{% endif %}
+
+# Media files
+media/
+
+# Static files
+staticfiles/
+static_root/
+
+# Django stuff
+*.log
+local_settings.py
+
+# Migrations bytecode
+*/migrations/*.pyc
+*/migrations/__pycache__/
+
+# Session files
+django_session/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Node/frontend
+node_modules/
+package-lock.json
+yarn.lock
+
+# Webpack/Vite bundles
+webpack-stats.json
+{% endblock %}
+{% block ignore_tailwind %}{% endblock%}
