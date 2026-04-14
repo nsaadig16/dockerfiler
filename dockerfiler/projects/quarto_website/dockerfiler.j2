@@ -1,0 +1,9 @@
+{% extends "base/dockerfiler.j2" %}
+
+{% block image %}
+FROM ghcr.io/quarto-dev/quarto:{{ version }}
+{% endblock %}
+
+{% block command %}
+CMD ["quarto", "preview", "{{main_file}}", "--host", "{{ host }}", "--port", "{{ port }}"]
+{% endblock %}

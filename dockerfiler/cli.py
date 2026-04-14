@@ -2,7 +2,6 @@ import json
 from dataclasses import fields
 from InquirerPy import inquirer
 from dockerfiler.projects import PROJECTS
-from rich import print
 
 def select_project():
     project = inquirer.fuzzy(

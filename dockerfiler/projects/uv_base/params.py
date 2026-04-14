@@ -5,7 +5,7 @@ from typing import Optional
 
 @dataclass
 class Params(p.Params):
-    version: str = ask(
+    version: Optional[str] = ask(
         question="Python version?",
         default="3.12",
         type="select",
