@@ -21,7 +21,7 @@ python3 dockerfiler # Run the tool
 Alternatively, you can run it using `uvx`.
 
 ```bash
-uvx dockerfiler # Run the tool without installing
+uvx -n dockerfiler # Run the tool without installing
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ Run it via `pip` or `uvx`:
 
 ```bash
 python3 dockerfiler # pip
-uvx dockerfiler # uvx
+uvx -n dockerfiler # uvx
 ```
 
 Then follow the interactive prompts to select your project type and configure your Dockerfile.
@@ -38,8 +38,9 @@ Then follow the interactive prompts to select your project type and configure yo
 ## Supported project types
 
 - Python (`uv`)
-- Django (`uv`)
+- Django (`uv`) + Tailwind
 - FastAPI (`uv`)
+- Quarto website
 
 ## Requirements
 
