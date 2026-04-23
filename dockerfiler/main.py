@@ -7,7 +7,10 @@ from rich import print
 from pathlib import Path
 from typing import Union
 
-env = Environment(loader=FileSystemLoader(Path(__file__).parent / "projects"))
+env = Environment(
+    loader=FileSystemLoader(Path(__file__).parent / "projects"),
+    trim_blocks=True,
+    lstrip_blocks=True)
 
 
 def main():

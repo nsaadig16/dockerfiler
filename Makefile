@@ -7,7 +7,7 @@ endef
 clean:
 	$(call printYellow,Cleaning...)
 	find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
-	rm -rf dist/ build/ *.egg-info README_files
+	rm -rf Dockerfile .dockerignore dist/ build/ *.egg-info README_files
 build: clean
 	$(call printYellow,Building...)
 	uv build
