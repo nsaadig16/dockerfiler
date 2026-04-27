@@ -1,11 +1,10 @@
 import re
 from dockerfiler.cli import select_project, ask_params
-from dockerfiler.projects.base._params import Params, IgnoreParams
 from argparse import ArgumentParser
 from jinja2 import Environment, FileSystemLoader
 from rich import print
 from pathlib import Path
-from typing import Union
+from typing import Dict
 
 env = Environment(
     loader=FileSystemLoader(Path(__file__).parent / "projects"),
@@ -60,7 +59,7 @@ def parse_args():
     )
     return parser.parse_args()
 
-def generate_file(template_path : str, params: Union[Params,IgnoreParams]) -> str:
+def generate_file(template_path : str, params: Dict[str,str]) -> str:
     template = env.get_template(str(template_path))
     content = template.render(**params)
     return re.sub(r"\n{3,}", "\n\n", content)

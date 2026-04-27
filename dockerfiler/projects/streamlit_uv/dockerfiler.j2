@@ -1,0 +1,5 @@
+{% extends "uv_base/dockerfiler.j2" %}
+
+{% block command %}
+CMD ["uv", "run", "streamlit", "run", "{{ entrypoint }}", "--server.address", "{{ host }}", "--server.port", "{{ port }}"]
+{% endblock %}

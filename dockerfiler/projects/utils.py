@@ -1,16 +1,16 @@
 from dataclasses import field
-from typing import Optional, List
+from typing import Optional, List, Union
 
 PYTHON_VERSIONS = ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
 QUARTO_VERSIONS = ["1.7.0","1.8.0", "1.9.0","1.9.32","1.10.0"]
 
 def ask(
     question: str,
-    default: str = "",
+    default: Union[str,bool] = "",
     type: str = "text",
     choices: Optional[List] = None,
     list_parse: bool = False,
-):
+)-> field:
     metadata={
         "question": question,
         "default": default,

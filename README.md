@@ -1,13 +1,11 @@
+# DockerFiler
 ![PyPI - Version](https://img.shields.io/pypi/v/dockerfiler)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dockerfiler)
 
+**Dockerfiler** is a tool that builds a Dockerfile given some interactive prompts.
 <div align="center">
 <img src="https://raw.githubusercontent.com/nsaadig16/dockerfiler/refs/heads/main/assets/icon.png" width=100 >
 </div>
-
-# DockerFiler
-
-**Dockerfiler** is a tool that builds a Dockerfile given some interactive prompts.
 
 ## Installation
 
@@ -40,6 +38,7 @@ Then follow the interactive prompts to select your project type and configure yo
 - Python (`uv`)
 - Django (`uv`) + Tailwind
 - FastAPI (`uv`)
+- Streamlit (`uv`)
 - Quarto website
 
 ## Requirements

@@ -11,8 +11,8 @@ class Params(p.Params):
         type="select",
         choices=QUARTO_VERSIONS
     )
-    port : Optional[int] = ask(question="Port?", default="7722",type="text")
-    host : Optional[int] = ask(question="Host?", default="0.0.0.0",type="text")
+    port : Optional[str] = ask(question="Port?", default="7722",type="text")
+    host : Optional[str] = ask(question="Host?", default="0.0.0.0",type="text")
     main_file : Optional[str] = ask(
         question="Name of the index file?",
         default="index.qmd",

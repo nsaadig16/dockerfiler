@@ -2,6 +2,7 @@ import json
 from dataclasses import fields
 from InquirerPy import inquirer
 from dockerfiler.projects import PROJECTS
+from typing import Dict
 
 def select_project():
     project = inquirer.fuzzy(
@@ -11,7 +12,7 @@ def select_project():
     return PROJECTS[project]
 
 
-def ask_params(dataclass_type) -> dict:
+def ask_params(dataclass_type) -> Dict[str, str]:
     params = {}
     for f in fields(dataclass_type):
         meta = f.metadata
